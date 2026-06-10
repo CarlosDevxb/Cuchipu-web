@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores personalizados basados en tu logo (imagen.jpg) */
+  --color-cuchipu-dark: #001833;    /* Azul Marino Oscuro */
+  --color-cuchipu-light: #5dade2;   /* Azul Celeste / Cyan */
+  --color-cuchipu-accent: #f4b41a;  /* Amarillo / Dorado del casco */
+}
+
+body {
+  background-color: #ffffff;
+  color: #001833; /* Forzamos el texto principal al Azul Marino Oscuro */
+  font-family: system-ui, -apple-system, sans-serif;
+}
