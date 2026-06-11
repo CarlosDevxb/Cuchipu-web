@@ -163,9 +163,9 @@ function AboutUsPage() {
                                 </div>
 
                                 {/* Contenido del proyecto */}
-                                <div className="p-6 flex flex-col flex-grow">
+                                <div className="p-6 flex flex-col grow">
                                     <h3 className="text-xl font-bold text-cuchipu-dark mb-2">{project.name}</h3>
-                                    <p className="text-gray-600 text-sm mb-6 flex-grow">
+                                    <p className="text-gray-600 text-sm mb-6 grow">
                                         {project.description}
                                     </p>
 
@@ -192,7 +192,7 @@ function AboutUsPage() {
                 <div>
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-cuchipu-dark mb-4">
-                            El Equipo <span className="text-transparent bg-clip-text bg-gradient-to-r from-cuchipu-light to-blue-600">Detrás del Código</span>
+                            El Equipo <span className="text-transparent bg-clip-text bg-linear-to-r from-cuchipu-light to-blue-600">Detrás del Código</span>
                         </h2>
                         <p className="text-lg text-gray-600">
                             Contamos con un equipo técnico especializado, donde cada integrante aporta su experiencia en áreas clave del desarrollo para construir software excepcional.
@@ -204,7 +204,7 @@ function AboutUsPage() {
                             <div key={member.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:border-cuchipu-light/30 transition-colors">
 
                                 {/* Foto del integrante (Izquierda) */}
-                                <div className="flex-shrink-0">
+                                <div className="shrink-0">
                                     <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200 shadow-inner rotate-3 hover:rotate-0 transition-transform duration-300">
                                         <img
                                             src={member.photo}
@@ -215,7 +215,7 @@ function AboutUsPage() {
                                 </div>
 
                                 {/* Información del integrante (Derecha) */}
-                                <div className="text-center sm:text-left flex-grow">
+                                <div className="text-center sm:text-left grow">
                                     <h3 className="text-xl font-bold text-cuchipu-dark">{member.name}</h3>
                                     <p className="text-cuchipu-light font-semibold text-sm mb-3 uppercase tracking-wide">
                                         {member.role}

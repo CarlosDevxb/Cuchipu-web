@@ -18,7 +18,7 @@ function Hero() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-cuchipu-dark leading-tight mb-6 tracking-tight">
-              Transformamos ideas complejas en <span className="text-transparent bg-clip-text bg-gradient-to-r from-cuchipu-light to-blue-600">software excepcional</span>
+              Transformamos ideas complejas en <span className="text-transparent bg-clip-text bg-linear-to-r from-cuchipu-light to-blue-600">software excepcional</span>
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">

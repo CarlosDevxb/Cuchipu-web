@@ -97,7 +97,7 @@ function ContactPage() {
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">📧</div>
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-xl">📧</div>
                 <div>
                   <p className="text-sm text-gray-400 font-medium mb-1">Correo Principal</p>
                   <a href="mailto:contacto@cuchipu.cloud" className="text-lg font-semibold hover:text-cuchipu-light transition-colors">contacto@cuchipu.cloud</a>
@@ -105,7 +105,7 @@ function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">🌐</div>
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-xl">🌐</div>
                 <div>
                   <p className="text-sm text-gray-400 font-medium mb-1">Sitio Web y Soporte</p>
                   <a href="https://cuchipu.cloud" target="_blank" rel="noreferrer" className="text-lg font-semibold hover:text-cuchipu-light transition-colors">cuchipu.cloud</a>
@@ -113,7 +113,7 @@ function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 text-xl">📍</div>
+                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 text-xl">📍</div>
                 <div>
                   <p className="text-sm text-gray-400 font-medium mb-1">Ubicación</p>
                   <p className="text-lg font-semibold">Saltillo, Coahuila, México</p>
@@ -212,7 +212,7 @@ function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contactDirectory.map((contact, index) => (
               <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-4 items-start group">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0 text-xl border border-blue-100 group-hover:bg-cuchipu-light group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center shrink-0 text-xl border border-blue-100 group-hover:bg-cuchipu-light group-hover:text-white transition-colors duration-300">
                   👤
                 </div>
                 <div>
