@@ -1,70 +1,77 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Services() {
-  // Lista de servicios de ejemplo. Puedes modificarlos según lo que ofrezcan.
   const servicesList = [
     {
-      id: 1,
-      icon: '🌐', // Aquí luego puedes poner un SVG o un ícono de librerías como react-icons
-      title: 'Desarrollo Web a Medida',
-      description: 'Creamos plataformas web de alto rendimiento, escalables y seguras, utilizando las últimas tecnologías del mercado para garantizar la mejor experiencia de usuario.'
+      title: "Desarrollo Frontend",
+      description: "Interfaces de usuario rápidas y modernas usando React, Astro y Tailwind CSS, enfocadas en la mejor experiencia.",
+      image: "/front.jpg", // Asegúrate de tener esta imagen en tu carpeta public
+      icon: "💻"
     },
     {
-      id: 2,
-      icon: '📱',
-      title: 'Aplicaciones Móviles',
-      description: 'Llevamos tu idea a la palma de la mano de tus clientes con desarrollo de apps nativas o multiplataforma, optimizadas para iOS y Android.'
+      title: "Arquitectura Backend",
+      description: "APIs robustas, bases de datos MySQL y servidores Node.js estructurados para soportar alto tráfico.",
+      image: "/Backend.jpg",
+      icon: "⚙️"
     },
     {
-      id: 3,
-      icon: '☁️',
-      title: 'Arquitectura y Cloud',
-      description: 'Diseñamos infraestructuras en la nube robustas y eficientes. Migramos y optimizamos tus sistemas para que nunca dejen de funcionar.'
-    },
-    {
-      id: 4,
-      icon: '⚙️',
-      title: 'Mantenimiento y Soporte',
-      description: 'No te dejamos solo después del lanzamiento. Ofrecemos soporte técnico continuo y actualizaciones para que tu software evolucione con tu negocio.'
+      title: "Infraestructura y Redes",
+      description: "Configuración de servidores Linux, Docker, túneles Cloudflare y gestión de dominios seguros.",
+      image: "/redes.jpeg",
+      icon: "🌐"
     }
   ];
 
   return (
-    <section id="servicios" className="py-24 bg-gray-50/50">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Cabecera de la sección */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-cuchipu-light font-semibold tracking-wide uppercase text-sm mb-2">
-            Nuestras Especialidades
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-cuchipu-dark mb-4">
-            Soluciones tecnológicas integrales
-          </h3>
-          <p className="text-gray-600 text-lg">
-            Cubrimos todo el ciclo de vida del desarrollo de software, desde la concepción de la arquitectura hasta el despliegue y mantenimiento en producción.
+          <h2 className="text-base text-cuchipu-light font-semibold tracking-wide uppercase mb-2">Nuestra Experiencia</h2>
+          <p className="text-3xl md:text-4xl font-extrabold text-cuchipu-dark">
+            Soluciones completas para tu ecosistema digital
           </p>
         </div>
 
-        {/* Grid de Tarjetas de Servicios */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {servicesList.map((service) => (
-            <div 
-              key={service.id} 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-            >
-              {/* Contenedor del ícono con animación sutil al hacer hover */}
-              <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-cuchipu-light group-hover:text-white transition-colors duration-300">
-                {service.icon}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {servicesList.map((service, index) => (
+            <div key={index} className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
+              
+              {/* Imagen de referencia del servicio */}
+              <div className="w-full h-48 overflow-hidden bg-gray-200 relative">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    // Fallback visual si la imagen no se encuentra
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback en caso de no encontrar la imagen (Color sólido con el ícono) */}
+                <div className="absolute inset-0 bg-blue-50 hidden items-center justify-center text-5xl">
+                  {service.icon}
+                </div>
               </div>
-              
-              <h4 className="text-xl font-bold text-cuchipu-dark mb-3">
-                {service.title}
-              </h4>
-              
-              <p className="text-gray-600 leading-relaxed text-sm">
-                {service.description}
-              </p>
+
+              {/* Contenido de texto */}
+              <div className="p-8">
+                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-2xl mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-cuchipu-dark mb-3">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <Link to="/servicios" className="text-cuchipu-light font-medium hover:text-blue-700 inline-flex items-center gap-1 transition-colors">
+                  Saber más
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           ))}
         </div>

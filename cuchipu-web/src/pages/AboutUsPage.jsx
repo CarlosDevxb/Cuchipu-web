@@ -7,21 +7,21 @@ function AboutUsPage() {
             id: "meditec",
             name: "MediTec-ITS",
             description: "Sistema integral de gestión de salud para enfermería universitaria. Cuenta con una arquitectura multi-rol que permite administrar accesos y flujos de trabajo independientes para Administradores, Enfermeras, Médicos y Pacientes, optimizando el control clínico.",
-            image: "src\\assets\\meditec-logo.png", // Placeholder para la imagen de tu proyecto
+            image: "/meditec-logo.png", // Placeholder para la imagen de tu proyecto
             technologies: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS v4"]
         },
         {
             id: "CuchiNetworks",
             name: "CuchiNetworks",
             description: "Sistema de gestión de redes y servidores para pequeñas empresas. Permite monitorear el estado de los dispositivos, configurar alertas personalizadas y administrar accesos remotos de forma segura, todo desde una interfaz web intuitiva.",
-            image: "src/assets/cuchilogov2.png",
+            image: "/cuchilogov2.png", // Placeholder para la imagen de tu proyecto
             technologies: ["React", "Node.js", "Express", "MySQL", "Tailwind CSS v4"]
         },
         {
             id: "Chafatec",
             name: "Chafatec",
             description: "Sistema de gestión de calificaciones, alumnos y profesores para instituciones educativas. Facilita la administración de cursos, el seguimiento del rendimiento académico y la comunicación entre estudiantes y docentes a través de una plataforma web segura y escalable.",
-            image: "src\\assets\\Chafatec.png", // Placeholder para la imagen de tu proyecto
+            image: "/Chafatec.png", // Placeholder para la imagen de tu proyecto
             technologies: ["Angular", "Node.js", "Express", "MySQL", "Bootstrap"]
         },
         {
