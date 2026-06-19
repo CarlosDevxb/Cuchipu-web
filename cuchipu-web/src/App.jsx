@@ -11,7 +11,6 @@ function App() {
     <Router>
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar />
-        
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -20,11 +19,9 @@ function App() {
             <Route path="/contacto" element={<ContactPage />} />
           </Routes>
         </main>
-
         <Footer />
       </div>
     </Router>
   );
 }
-
 export default App;
