@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../components/Button';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,40 +11,39 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-[#030712]/70 backdrop-blur-xl z-50 border-b border-white/5 transition-all duration-300">
+    <nav className="fixed w-full bg-[#0A1128]/80 backdrop-blur-xl z-50 border-b border-sky-200/10 transition-all duration-300 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* Logo con Resplandor */}
+          {/* Logo y Nombre */}
           <div className="shrink-0 flex items-center">
-            <Link to="/" className="flex items-center gap-3 group relative">
-              <div className="absolute -inset-1 bg-linear-to-r from-cyan-500 to-purple-600 rounded-lg blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
+            <Link to="/" className="flex items-center gap-3 group">
               <img 
-                src="/Logo.png" 
-                alt="Logo Cuchipu" 
-                className="h-9 w-auto relative z-10 group-hover:scale-105 transition-transform duration-300"
+                src="/CuchipuCloud.png" 
+                alt="Cuchipu Cloud Logo" 
+                className="h-12 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]"
               />
-              <span className="text-2xl font-black text-white tracking-wider relative z-10 bg-linear-to-r from-white via-gray-200 to-gray-400 bg-clip-text">
-                CUHIPU CLOUD
+              <span className="text-2xl font-black text-white tracking-wide">
+                Cuchipu<span className="text-sky-400">Cloud</span>
               </span>
             </Link>
           </div>
 
           {/* Enlaces de Escritorio */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
                 to={link.path} 
-                className="text-gray-400 hover:text-cyan-400 font-medium tracking-wide transition-colors relative py-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-cyan-400 hover:after:w-full after:transition-all after:duration-300"
+                className="text-sky-100 hover:text-amber-400 font-semibold tracking-wide transition-colors"
               >
                 {link.name}
               </Link>
             ))}
             <Link to="/contacto">
-              <Button variant="primary" className="shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)]">
+              <button className="bg-amber-400 hover:bg-amber-300 text-[#0A1128] font-bold py-2.5 px-6 rounded-lg shadow-[0_4px_14px_0_rgba(251,191,36,0.39)] hover:shadow-[0_6px_20px_rgba(251,191,36,0.23)] hover:-translate-y-0.5 transition-all duration-200">
                 Contacto
-              </Button>
+              </button>
             </Link>
           </div>
 
@@ -53,7 +51,7 @@ function Navbar() {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-400 hover:text-white focus:outline-none p-2 rounded-lg bg-white/5 border border-white/10"
+              className="text-sky-200 hover:text-white focus:outline-none p-2 rounded-lg bg-sky-900/30"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -69,23 +67,23 @@ function Navbar() {
 
       {/* Menú Móvil Desplegable */}
       {isOpen && (
-        <div className="md:hidden bg-[#030712]/95 backdrop-blur-2xl border-b border-white/10 animate-fadeIn">
-          <div className="px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+        <div className="md:hidden bg-[#0A1128]/95 backdrop-blur-2xl border-b border-sky-200/10">
+          <div className="px-4 pt-2 pb-6 space-y-2 shadow-2xl">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="block text-gray-300 font-semibold hover:text-cyan-400 transition-colors py-3 text-base border-b border-white/5"
+                className="block text-sky-100 font-semibold hover:text-amber-400 transition-colors py-3 text-base border-b border-sky-900/50"
               >
                 {link.name}
               </Link>
             ))}
             <div className="pt-4">
               <Link to="/contacto" onClick={() => setIsOpen(false)}>
-                <Button variant="primary" className="w-full text-center shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+                <button className="w-full bg-amber-400 hover:bg-amber-300 text-[#0A1128] font-bold py-3 px-6 rounded-lg transition-colors">
                   Contacto
-                </Button>
+                </button>
               </Link>
             </div>
           </div>

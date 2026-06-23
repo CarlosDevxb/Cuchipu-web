@@ -6,11 +6,15 @@ import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ContactPage from './pages/ContactPage';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar />
+        <ScrollToTop />
+
+
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />

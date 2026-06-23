@@ -2,94 +2,105 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Services() {
+  // Lista condensada con los 8 servicios para la vista de la página de Inicio
   const servicesList = [
     {
-      title: "Desarrollo Full-Stack",
-      description: "Ecosistemas web robustos construidos con React, Astro y arquitecturas API eficientes en Node.js, optimizados para rendimiento masivo.",
-      image: "/Backend.jpg",
-      icon: "💻",
-      glowColor: "group-hover:border-cyan-500/40 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
+      title: "Desarrollo Frontend",
+      description: "Interfaces y lógicas de negocio escritas con código limpio y moderno.",
+      icon: "</>",
+      accentHover: "group-hover:border-cyan-400/50 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]",
+      textColor: "group-hover:text-cyan-400"
     },
     {
-      title: "Ingeniería de Datos",
-      description: "Modelado relacional y estructuración de bases de datos escalables en MySQL, diseñados para garantizar integridad y velocidad de respuesta.",
-      image: "/front.jpg",
+      title: "Arquitectura Backend",
+      description: "APIs robustas, seguras y capaces de manejar roles y procesamiento masivo.",
       icon: "⚙️",
-      glowColor: "group-hover:border-purple-500/40 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+      accentHover: "group-hover:border-purple-400/50 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]",
+      textColor: "group-hover:text-purple-400"
     },
     {
-      title: "Infraestructura & DevOps",
-      description: "Alojamiento avanzado en servidores Linux, contenedores Docker y pasarelas de seguridad perimetral mediante túneles Cloudflare.",
-      image: "/redes.jpeg",
-      icon: "🌐",
-      glowColor: "group-hover:border-blue-500/40 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+      title: "Bases de Datos",
+      description: "Modelado relacional estructurado para integridad y rápido acceso a la información.",
+      icon: "🗄️",
+      accentHover: "group-hover:border-emerald-400/50 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]",
+      textColor: "group-hover:text-emerald-400"
+    },
+    {
+      title: "Infraestructura Cloud",
+      description: "Alojamiento en ecosistemas Linux, túneles seguros y máxima disponibilidad.",
+      icon: "☁️",
+      accentHover: "group-hover:border-blue-400/50 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]",
+      textColor: "group-hover:text-blue-400"
+    },
+    {
+      title: "DevOps & Contenedores",
+      description: "Automatización con Docker y CI/CD para despliegues sin interrupciones.",
+      icon: "🐳",
+      accentHover: "group-hover:border-amber-400/50 group-hover:shadow-[0_0_30px_rgba(251,191,36,0.15)]",
+      textColor: "group-hover:text-amber-400"
+    },
+    {
+      title: "Redes Físicas",
+      description: "Configuración de redes locales, ruteo avanzado e instalación de hardware en sitio.",
+      icon: "🔌",
+      accentHover: "group-hover:border-rose-400/50 group-hover:shadow-[0_0_30px_rgba(244,63,94,0.15)]",
+      textColor: "group-hover:text-rose-400"
+    },
+    {
+      title: "Soporte & Monitoreo",
+      description: "Supervisión de servidores 24/7 y resolución de incidentes en tiempo real.",
+      icon: "🛠️",
+      accentHover: "group-hover:border-teal-400/50 group-hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]",
+      textColor: "group-hover:text-teal-400"
+    },
+    {
+      title: "Consultoría Tech",
+      description: "Auditoría de sistemas lentos e inseguros para reestructurar y escalar operaciones.",
+      icon: "📊",
+      accentHover: "group-hover:border-fuchsia-400/50 group-hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]",
+      textColor: "group-hover:text-fuchsia-400"
     }
   ];
 
   return (
-    <section className="py-28 bg-[#020617] relative overflow-hidden">
-      
-      {/* Sutil resplandor lateral */}
-      <div className="absolute right-0 top-1/3 w-72 h-72 rounded-full bg-purple-500/5 blur-[100px]"></div>
-
+    <section className="py-24 bg-[#060B19] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="text-xs font-bold text-cyan-400 tracking-widest uppercase mb-3">Core Capabilities</div>
+          <div className="text-sm font-bold text-amber-400 tracking-widest uppercase mb-3">Ecosistema Tecnológico</div>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">
-            Soluciones completas para tu ecosistema digital
+            Herramientas sólidas para construir tu empresa
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cuadrícula ajustada para mostrar los 8 servicios perfectamente */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {servicesList.map((service, index) => (
             <div 
               key={index} 
-              className={`bg-[#0b1329]/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden group transition-all duration-500 ${service.glowColor}`}
+              className={`bg-[#0A1128] rounded-2xl border border-sky-900/50 overflow-hidden group transition-all duration-300 p-6 relative ${service.accentHover}`}
             >
+              <div className="w-12 h-12 bg-sky-900/40 border border-sky-400/20 rounded-xl flex items-center justify-center text-2xl mb-5 text-white font-bold shadow-inner group-hover:bg-sky-800/60 transition-colors">
+                {service.icon}
+              </div>
               
-              {/* Imagen del Servicio con Capa Tecnológica */}
-              <div className="w-full h-52 overflow-hidden bg-slate-900 relative">
-                <div className="absolute inset-0 bg-linear-to-t from-[#0b1329] via-transparent to-transparent z-10"></div>
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="absolute inset-0 bg-[#070d19] hidden items-center justify-center text-5xl">
-                  {service.icon}
-                </div>
-              </div>
-
-              {/* Contenido */}
-              <div className="p-8 relative z-20">
-                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 shadow-inner">
-                  {service.icon}
-                </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-cyan-400 transition-colors">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-400 font-light leading-relaxed mb-8 text-sm">
-                  {service.description}
-                </p>
-                
-                <Link 
-                  to="/servicios" 
-                  className="text-cyan-400 font-medium hover:text-cyan-300 inline-flex items-center gap-2 group/link transition-colors text-sm tracking-wider uppercase"
-                >
-                  Ver especificaciones
-                  <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-
+              <h3 className={`text-xl font-bold text-white mb-3 tracking-tight transition-colors ${service.textColor}`}>
+                {service.title}
+              </h3>
+              
+              <p className="text-sky-100/70 font-light leading-relaxed mb-6 text-sm">
+                {service.description}
+              </p>
+              
+              <Link 
+                to="/servicios" 
+                className="text-sky-400/80 font-bold group-hover:text-sky-400 inline-flex items-center gap-2 group/link transition-colors text-xs uppercase tracking-wider absolute bottom-6"
+              >
+                Saber más
+                <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           ))}
         </div>
